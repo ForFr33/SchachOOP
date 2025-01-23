@@ -16,6 +16,11 @@ public class Bauer extends ChessPiece{
 
     @Override
     public boolean canMove(int x, int y) {
-        return this.xCoordinate + 1 == x && this.yCoordinate == y ? true: false;
+        if (getxCoordinate() + 1 == x && this.owner == 1) {
+            return true;
+        } else if (getxCoordinate() - 1 == x && this.owner == -1) {
+            return true;
+        } else
+            return false;
     }
 }

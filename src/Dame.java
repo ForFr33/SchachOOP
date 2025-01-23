@@ -16,6 +16,7 @@ public class Dame extends ChessPiece {
 
     @Override
     public boolean canMove(int x, int y) {
+        if ()
         return true;
     }
 }
