@@ -1,6 +1,6 @@
-public class Läufer extends ChessPiece{
-    Läufer (int value, int owner, int xCoordinate, int yCoordinate) {
-        super(value, owner, xCoordinate, yCoordinate);
+public class Laeufer extends ChessPiece{
+    Laeufer (int value, int owner, int xCoordinate, int yCoordinate, String symbol) {
+        super(value, owner, xCoordinate, yCoordinate, symbol);
     }
 
     @Override

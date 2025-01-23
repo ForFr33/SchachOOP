@@ -1,7 +1,7 @@
 public class Springer extends  ChessPiece{
 
-    Springer (int value, int owner, int xCoordinate, int yCoordinate) {
-        super(value, owner, xCoordinate, yCoordinate);
+    Springer (int value, int owner, int xCoordinate, int yCoordinate, String symbol) {
+        super(value, owner, xCoordinate, yCoordinate, symbol);
     }
 
     @Override

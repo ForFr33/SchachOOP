@@ -1,7 +1,7 @@
 public class Turm extends ChessPiece{
 
-    Turm (int value, int owner, int xCoordinate, int yCoordinate) {
-        super(value, owner, xCoordinate, yCoordinate);
+    Turm (int value, int owner, int xCoordinate, int yCoordinate, String symbol) {
+        super(value, owner, xCoordinate, yCoordinate, symbol);
     }
 
     @Override

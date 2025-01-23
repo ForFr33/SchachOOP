@@ -1,7 +1,7 @@
-public class König extends ChessPiece{
+public class Koenig extends ChessPiece{
 
-    König (int value, int owner, int xCoordinate, int yCoordinate) {
-        super(value, owner, xCoordinate, yCoordinate);
+    Koenig (int value, int owner, int xCoordinate, int yCoordinate,String symbol) {
+        super(value, owner, xCoordinate, yCoordinate, symbol);
     }
 
     @Override

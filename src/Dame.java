@@ -1,7 +1,7 @@
 public class Dame extends ChessPiece {
 
-    Dame (int value, int owner, int xCoordinate, int yCoordinate) {
-        super(value, owner, xCoordinate, yCoordinate);
+    Dame (int value, int owner, int xCoordinate, int yCoordinate, String symbol) {
+        super(value, owner, xCoordinate, yCoordinate, symbol);
     }
 
     @Override

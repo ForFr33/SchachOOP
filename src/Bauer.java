@@ -1,6 +1,7 @@
+
 public class Bauer extends ChessPiece{
-    Bauer (int value, int owner, int xCoordinate, int yCoordinate) {
-        super(value, owner, xCoordinate, yCoordinate);
+    Bauer (int value, int owner, int xCoordinate, int yCoordinate, String symbol) {
+        super(value, owner, xCoordinate, yCoordinate, symbol);
     }
 
     @Override
@@ -15,6 +16,6 @@ public class Bauer extends ChessPiece{
 
     @Override
     public boolean canMove(int x, int y) {
-        return true;
+        return this.xCoordinate + 1 == x && this.yCoordinate == y ? true: false;
     }
 }
