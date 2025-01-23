@@ -16,7 +16,13 @@ public class Koenig extends ChessPiece{
 
     @Override
     public boolean canMove(int x, int y) {
-        return true;
+        boolean result = true;
+        if (x < getxCoordinate() - 1 || x > getxCoordinate() + 1) {
+            result = false;
+        } else if (y < getyCoordinate() - 1 || y > getxCoordinate() + 1) {
+            result = false;
+        }
+        return result;
     }
 
 }
