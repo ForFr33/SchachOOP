@@ -3,16 +3,14 @@ public class Laeufer extends ChessPiece{
         super(value, owner, xCoordinate, yCoordinate, symbol);
     }
 
-    @Override
-    public int getxCoordinate() {
-        return this.xCoordinate;
-    }
-
-    @Override
-    public int getyCoordinate() {
-        return this.yCoordinate;
-    }
-
+    /**
+     * Gibt an, ob die Figur Lauefer sich bewegen kann oder nicht.
+     * Nimmt die x und y Koordinate eines Feldes entgegen und
+     * prüft, ob der Lauefer das Feld erreichen kann.
+     * @param x x-Koordinate des zu erreichenden Feldes.
+     * @param y y-Koordinate des zu erreichenden Feldes.
+     * @return true, wenn das Feld zu erreichen ist, sonst false.
+     */
     @Override
     public boolean canMove(int x, int y) {
         return x != getxCoordinate() && y != getyCoordinate();
