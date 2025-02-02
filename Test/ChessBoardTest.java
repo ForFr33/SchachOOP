@@ -4,19 +4,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ChessBoardTest {
 
-    @Test
-    void piecesInPlay() {
-    }
-
-    @Test
-    void currentGameStatus() {
-    }
 
     @Test
     void movePiece() {
-    Dame d = new Dame(9,1,0,3,"D");
-    assertTrue(ChessBoard.movePiece(d,6,3));
-    Turm t = new Turm(5,-1,7,6,"T");
-    assertFalse(ChessBoard.movePiece(t,6,0));
+        ChessBoard spielBrett = new ChessBoard();
+        assertFalse(spielBrett.movePiece(spielBrett.spielFeld[7][0],6,0));
+        assertTrue(spielBrett.movePiece(spielBrett.spielFeld[7][0],1,0));
+        assertEquals(1,spielBrett.spielFeld[1][0].getxCoordinate());
+        assertEquals(null,spielBrett.spielFeld[7][0]);
+        assertTrue(spielBrett.movePiece(spielBrett.spielFeld[1][0],1,1));
     }
 }

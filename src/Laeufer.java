@@ -4,9 +4,9 @@ public class Laeufer extends ChessPiece{
     }
 
     /**
-     * Gibt an, ob die Figur Lauefer sich bewegen kann oder nicht.
+     * Gibt an, ob die Figur Laeufer sich bewegen kann oder nicht.
      * Nimmt die x und y Koordinate eines Feldes entgegen und
-     * prüft, ob der Lauefer das Feld erreichen kann.
+     * prüft, ob der Laeufer das Feld erreichen kann.
      * @param x x-Koordinate des zu erreichenden Feldes.
      * @param y y-Koordinate des zu erreichenden Feldes.
      * @return true, wenn das Feld zu erreichen ist, sonst false.

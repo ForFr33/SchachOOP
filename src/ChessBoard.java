@@ -3,7 +3,7 @@ import java.util.List;
 
 public class ChessBoard {
 
-    public static ChessPiece[][] spielFeld = new ChessPiece[8][8];
+    public ChessPiece[][] spielFeld = new ChessPiece[8][8];
 
     ChessBoard () {
     spielFeld [0][0] = new Turm(5,1,0,0,"T");
@@ -36,7 +36,7 @@ public class ChessBoard {
      * und speichert Elemente ChessPiece[i] in einer Liste, falls diese nicht = null sind.
      * @return Liste aller Objekte der Klasse ChessPiece in spielFeld[x][y], die nicht null sind.
      */
-    public List<ChessPiece> piecesInPlay() {
+    public  List<ChessPiece> piecesInPlay() {
         List<ChessPiece> pieces = new LinkedList<ChessPiece>();
         for (int i = 0; i <= 7; i+=1) {
             for (ChessPiece[] x : spielFeld) {
@@ -48,30 +48,31 @@ public class ChessBoard {
         return pieces;
     }
 
-    public void currentGameStatus(ChessPiece[][] x) {
-        currentGameStatus(x);
-    }
 
     /**
      * Bewegt eine Figur auf ein anderes Feld.
-     * @param piece
+     * Nimmt ein Objekt der Klasse Chesspiece sowie eine x und y Koordinate entgegen,
+     * prüft, ob das entsprechende Chesspiece Objekt das Feld mit den Koordinaten x,y erreichen kann,
+     * bewegt die Figur auf das Feld und gibt true zurück, falls es möglich ist, ansonsten wird nichts verändert
+     * und die Methode gibt false zurück.
+     * @param piece Figur, die bewegt werden soll.
      * @param x x-Koordinate des Feldes, auf das die Figur bewegt werden soll.
      * @param y y-Koordinate des Feldes, auf das die Figur bewegt werden soll.
      * @return true, falls
      */
-    public static boolean movePiece (ChessPiece piece, int x, int y) {
+    public boolean movePiece (ChessPiece piece, int x, int y) {
             if (piece.canMove(x,y) && spielFeld[x][y] == null) {
+                spielFeld[piece.getxCoordinate()][piece.getyCoordinate()] = null;
                 piece.xCoordinate = x;
                 piece.yCoordinate = y;
                 spielFeld[x][y] = piece;
-                spielFeld[piece.getxCoordinate()][piece.getyCoordinate()] = null;
                 return true;
             } else if(piece.canMove(x,y) && spielFeld[x][y].owner != piece.owner) {
+                spielFeld[piece.getxCoordinate()][piece.getyCoordinate()] = null;
                 piece.xCoordinate = x;
                 piece.yCoordinate = y;
                 spielFeld[x][y]= null;
                 spielFeld[x][y] = piece;
-                spielFeld[piece.getxCoordinate()][piece.getyCoordinate()] = null;
                 return true;
             } else
                 return false;
