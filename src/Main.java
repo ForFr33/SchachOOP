@@ -6,7 +6,7 @@ public class Main {
             System.out.println(ChessBoard.spielFeld[i][6]);
         }
         System.out.println(Brett.piecesInPlay());
-
-
+        System.out.println(ChessBoard.movePiece(ChessBoard.spielFeld[0][1],2,0));
+        System.out.println(Brett.piecesInPlay());
     }
 }

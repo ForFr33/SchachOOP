@@ -31,10 +31,10 @@ public class ChessBoard {
     }
 
     /**
-     * Erstellt eine Liste der aktiven Figuren.
+     * Erstellt eine Liste aller aktiven Figuren.
      * Filtert das Feld spielFeld der KLasse ChessBoard nach ChessPiece[] Arrays
      * und speichert Elemente ChessPiece[i] in einer Liste, falls diese nicht = null sind.
-     * @return Liste mit allen Elementen in spielFeld, die nicht = null sind.
+     * @return Liste aller Objekte der Klasse ChessPiece in spielFeld[x][y], die nicht null sind.
      */
     public List<ChessPiece> piecesInPlay() {
         List<ChessPiece> pieces = new LinkedList<ChessPiece>();
@@ -59,21 +59,22 @@ public class ChessBoard {
      * @param y y-Koordinate des Feldes, auf das die Figur bewegt werden soll.
      * @return true, falls
      */
-    public boolean movePiece (ChessPiece piece, int x, int y) {
-        while (piece.canMove(x,y) == true ) {
-            if (x > piece.getxCoordinate()) {
-                piece.xCoordinate += 1;
-            } else if (x < piece.getxCoordinate()) {
-                piece.xCoordinate -= 1;
-            }
-            if (y > piece.getyCoordinate()) {
-                piece.yCoordinate += 1;
-            } else if (y < piece.getyCoordinate()) {
-                piece.yCoordinate -= 1;
-            }
-
-        }
-        return false;
+    public static boolean movePiece (ChessPiece piece, int x, int y) {
+            if (piece.canMove(x,y) && spielFeld[x][y] == null) {
+                piece.xCoordinate = x;
+                piece.yCoordinate = y;
+                spielFeld[x][y] = piece;
+                spielFeld[piece.getxCoordinate()][piece.getyCoordinate()] = null;
+                return true;
+            } else if(piece.canMove(x,y) && spielFeld[x][y].owner != piece.owner) {
+                piece.xCoordinate = x;
+                piece.yCoordinate = y;
+                spielFeld[x][y]= null;
+                spielFeld[x][y] = piece;
+                spielFeld[piece.getxCoordinate()][piece.getyCoordinate()] = null;
+                return true;
+            } else
+                return false;
     }
 
 
