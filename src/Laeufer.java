@@ -13,6 +13,9 @@ public class Laeufer extends ChessPiece{
      */
     @Override
     public boolean canMove(int x, int y) {
+        if ((x < 0 || x > 7) || (y < 0 || y > 7)) {
+            return false;
+        }
         boolean result = false;
         if (Math.abs(x - getxCoordinate()) == Math.abs(y - getyCoordinate())) {
             result = true;

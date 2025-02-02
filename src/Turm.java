@@ -14,6 +14,9 @@ public class Turm extends ChessPiece{
      */
     @Override
     public boolean canMove(int x, int y) {
+        if ((x < 0 || x > 7) || (y < 0 || y > 7)) {
+            return false;
+        }
         if (y != getyCoordinate() && x == getxCoordinate()) {
             return true;
         } else if (x != getxCoordinate() && y == getyCoordinate()) {

@@ -14,6 +14,9 @@ public class Dame extends ChessPiece {
      */
     @Override
     public boolean canMove(int x, int y) {
+        if ((x < 0 || x > 7) || (y < 0 || y > 7)) {
+            return false;
+        }
         boolean result = false;
         if (y != getyCoordinate() && x == getxCoordinate()) {
             result = true;

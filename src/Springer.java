@@ -14,6 +14,9 @@ public class Springer extends  ChessPiece{
      */
     @Override
     public boolean canMove(int x, int y) {
+        if ((x < 0 || x > 7) || (y < 0 || y > 7)) {
+            return false;
+        }
         boolean result = false;
         if ((x == getxCoordinate() + 2 || x == getxCoordinate() - 2) && (y == getyCoordinate() + 1 || y == getyCoordinate() - 1)) {
             result = true;
