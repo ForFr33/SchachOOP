@@ -14,6 +14,15 @@ public class Dame extends ChessPiece {
      */
     @Override
     public boolean canMove(int x, int y) {
-        return true;
+        boolean result = false;
+        if (y != getyCoordinate() && x == getxCoordinate()) {
+            result = true;
+        } else if (x != getxCoordinate() && y == getyCoordinate()) {
+            result = true;
+        }
+        if (Math.abs(x - getxCoordinate()) == Math.abs(y - getyCoordinate())) {
+            result = true;
+        }
+        return result;
     }
 }

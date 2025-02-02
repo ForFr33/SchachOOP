@@ -1,6 +1,5 @@
 public abstract class ChessPiece {
-    protected final int value;
-    protected final int owner;
+    protected final int value, owner;
     protected final String symbol;
     public int xCoordinate;
     public int yCoordinate;

@@ -60,6 +60,19 @@ public class ChessBoard {
      * @return true, falls
      */
     public boolean movePiece (ChessPiece piece, int x, int y) {
+        while (piece.canMove(x,y) == true ) {
+            if (x > piece.getxCoordinate()) {
+                piece.xCoordinate += 1;
+            } else if (x < piece.getxCoordinate()) {
+                piece.xCoordinate -= 1;
+            }
+            if (y > piece.getyCoordinate()) {
+                piece.yCoordinate += 1;
+            } else if (y < piece.getyCoordinate()) {
+                piece.yCoordinate -= 1;
+            }
+
+        }
         return false;
     }
 

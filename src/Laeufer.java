@@ -13,6 +13,10 @@ public class Laeufer extends ChessPiece{
      */
     @Override
     public boolean canMove(int x, int y) {
-        return x != getxCoordinate() && y != getyCoordinate();
+        boolean result = false;
+        if (Math.abs(x - getxCoordinate()) == Math.abs(y - getyCoordinate())) {
+            result = true;
+        }
+        return result;
     }
 }

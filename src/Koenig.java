@@ -6,7 +6,7 @@ public class Koenig extends ChessPiece{
 
     /**
      * Gibt an, ob die Figur Koenig sich bewegen kann oder nicht.
-     * Nimmt die x und y Koordinate eines Feldes entgegen und
+     * Nimmt die x und y Koordinaten eines Feldes entgegen und
      * prüft, ob der Koenig das Feld erreichen kann.
      * @param x x-Koordinate des zu erreichenden Feldes.
      * @param y y-Koordinate des zu erreichenden Feldes.
@@ -17,7 +17,7 @@ public class Koenig extends ChessPiece{
         boolean result = true;
         if (x < getxCoordinate() - 1 || x > getxCoordinate() + 1) {
             result = false;
-        } else if (y < getyCoordinate() - 1 || y > getxCoordinate() + 1) {
+        } else if (y < getyCoordinate() - 1 || y > getyCoordinate() + 1) {
             result = false;
         }
         return result;
